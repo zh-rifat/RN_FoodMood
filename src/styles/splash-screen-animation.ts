@@ -1,8 +1,25 @@
 import { useRef } from "react";
 import { Animated } from "react-native";
+import { SharedTransition, withSpring, withTiming } from "react-native-reanimated";
 
 export const logoAnimation=useRef(new Animated.Value(0)).current;
 export const containerAnimation=useRef(new Animated.Value(0)).current;
+
+
+export const logoTransition = SharedTransition.custom((values) => {
+  'worklet';
+  const animationDuration = 500;
+  return { // Adjust the duration as needed
+
+  // ...
+  
+  width: withTiming(values.targetWidth, { duration: animationDuration }),
+  originX: withTiming(values.targetOriginX, { duration: animationDuration }),
+  height: withTiming(values.targetHeight, { duration: animationDuration }),
+  originY: withTiming(values.targetOriginY, { duration: animationDuration }),
+  borderRadius: withTiming(9999, { duration: 100 }),
+  };
+});
 
 export const logoAnimationStyles={
   transform:[

@@ -42,3 +42,19 @@ export default StyleSheet.create({
   }
 });
 ```
+
+---
+
+**hero icons**
+```bash
+npm i react-native-heroicons react-native-svg
+```
+
+
+
+---
+## //TODO model
+- add category to the vendor model
+- add rating to vendor and product model
+- create featured vendor model
+- add coordinate to vendor model
